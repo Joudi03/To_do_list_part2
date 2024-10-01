@@ -23,7 +23,7 @@ class TodoList extends StatelessWidget {
       body: Consumer<SaveTask>(
         builder: (context, task, child) {
           return ListView.builder(
-            itemCount: task.tasks.length,
+            itemCount: task.tasks.length, // Number of tasks
             itemBuilder: (BuildContext context, index) {
               return ListTile(
                 title: Text(
@@ -37,9 +37,9 @@ class TodoList extends StatelessWidget {
                 trailing: Wrap(
                   children: [
                     Checkbox(
-                      value: task.tasks[index].isCompleted,
+                      value: task.tasks[index].isCompleted, // Checkbox for completion status
                       onChanged: (_) {
-                        context.read<SaveTask>().checkTask(index);
+                        context.read<SaveTask>().checkTask(index); // Mark task as complete/incomplete
                       },
                     ),
                     IconButton(

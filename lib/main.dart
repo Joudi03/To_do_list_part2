@@ -8,7 +8,7 @@ import 'package:test_app/pages/todo_list.dart';
 void main() {
   runApp(
     ChangeNotifierProvider(
-      create: (context) => SaveTask(),
+      create: (context) => SaveTask()..loadTasks(), // Load tasks on startup
       child: const MyApp(),
     ),
   );
